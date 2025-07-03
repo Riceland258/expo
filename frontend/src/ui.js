@@ -32,7 +32,7 @@ async function handleFileUpload(e) {
   if (!file) return;
   const formData = new FormData();
   formData.append('file', file);
-  await fetch('http://localhost:5000/upload', {
+  await fetch('https://expo-epdz.onrender.com', {
     method: 'POST',
     body: formData
   });
@@ -40,7 +40,7 @@ async function handleFileUpload(e) {
 }
 
 async function loadGallery() {
-  const res = await fetch('http://localhost:5000/gallery');
+  const res = await fetch('https://expo-epdz.onrender.com/gallery');
   const data = await res.json();
   const gallery = document.getElementById('gallery');
   gallery.innerHTML = '';
@@ -53,7 +53,7 @@ async function loadGallery() {
 
 async function handleDraw() {
   const password = document.getElementById('password').value;
-  const res = await fetch('http://localhost:5000/draw', {
+  const res = await fetch('https://expo-epdz.onrender.com/draw', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ password })
@@ -61,7 +61,7 @@ async function handleDraw() {
   const data = await res.json();
   const winnerDiv = document.getElementById('winner');
   if (data.winner) {
-    winnerDiv.innerHTML = `<b>Ganador:</b><br><img src="http://localhost:5000/uploads/${data.winner}" style="max-width:200px; margin-top:1rem; border-radius:10px;" />`;
+    winnerDiv.innerHTML = `<b>Ganador:</b><br><img src="https://expo-epdz.onrender.com/uploads/${data.winner}" style="max-width:200px; margin-top:1rem; border-radius:10px;" />`;
   } else {
     winnerDiv.textContent = data.error || 'Error en el sorteo';
   }
