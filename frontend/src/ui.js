@@ -46,7 +46,7 @@ async function loadGallery() {
   gallery.innerHTML = '';
   data.images.forEach(img => {
     const el = document.createElement('img');
-    el.src = `http://localhost:5000/uploads/${img}`;
+    el.src = `https://expoinge.netlify.app//uploads/${img}`;
     gallery.appendChild(el);
   });
 }
