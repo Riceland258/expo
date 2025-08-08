@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Cambia esta URL por la de tu backend en Render, por ejemplo:
     // const BACKEND_URL = 'https://tu-backend.onrender.com';
-    const BACKEND_URL = 'https://expo-fnrj.onrender.com';
+    const BACKEND_URL = 'https://expo-62r9.onrender.com';
 
     const cameraBtn = document.getElementById('cameraBtn');
     const fileInput = document.getElementById('fileInput');
@@ -90,3 +90,4 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
